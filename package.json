@@ -1,0 +1,33 @@
+{
+  "name": "permit-express",
+  "version": "0.0.1",
+  "description": "An example of using Permit.io SDK as an authorization middle ware in Express.JS application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll"
+  },
+  "keywords": [
+    "permit.io",
+    "auhtorization",
+    "rbac",
+    "abac",
+    "express",
+    "express.js"
+  ],
+  "author": "https://github.com/gemanor",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsdom": "^22.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "permitio": "^1.1.5"
+  },
+  "devDependencies": {
+    "http-errors": "^2.0.0",
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
+  }
+}
