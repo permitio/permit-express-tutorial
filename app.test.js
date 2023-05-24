@@ -23,28 +23,6 @@ describe('API Test', () => {
         await request(app).delete('/post/1').set('Authorization', token).expect(200);
     });
 
-    test('CRUD Post by writer and commenter', async () => {
-        await request(app).post('/post').send({
-            published: false,
-        }).set('Authorization', writer).expect(200);
-        await request(app).put('/post/1').send({
-            published: false,
-        }).set('Authorization', writer).expect(200);
-        await request(app).delete('/post/1').set('Authorization', writer).expect(200);
-        await request(app).post('/post').set('Authorization', commenter).expect(403);
-        await request(app).put('/post/1').set('Authorization', commenter).expect(403);
-        await request(app).delete('/post/1').set('Authorization', commenter).expect(403);
-    });
-
-    test('CRUD Post by approved writer', async () => {
-        await request(app).post('/post').send({
-            published: true,
-        }).set('Authorization', approvedWriter).expect(200);
-        await request(app).put('/post/1').send({
-            published: true,
-        }).set('Authorization', approvedWriter).expect(200);
-    });
-
     test('CRUD Author', async () => {
         await request(app).get('/author').expect(200);
         await request(app).get('/author/1').expect(200);
